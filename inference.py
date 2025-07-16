@@ -61,7 +61,7 @@ def build_models(config):
 
     # load vocoder
     vocoder_config_path = fc_ckpt
-    vocoder = Generator.from_pretrained(vocoder_config_path, subfolder="vocoder").to(config.device)
+    vocoder = Generator.from_pretrained(vocoder_config_path, subfolder="vocoder").to("cpu")
 
     # load time_detector
     time_detector_ckpt = osp.join(osp.join(config.ckpt, "timestamp_detector.pth.tar"))
